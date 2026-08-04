@@ -1,0 +1,318 @@
+/* =========================================================
+   EMBER & VINE — Admin Dashboard
+   ========================================================= */
+
+.admin-shell {
+  display: flex;
+  min-height: 100vh;
+  background: #F5F2EC;
+}
+
+/* ---------- Sidebar ---------- */
+.admin-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: #15130F;
+  color: rgba(255,255,255,0.82);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.admin-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.4rem 1.3rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.02rem;
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.admin-sidebar-brand .nav-badge {
+  background: linear-gradient(135deg, #BF5B26, var(--color-gold));
+  box-shadow: none;
+}
+.admin-sidebar-nav {
+  flex: 1;
+  padding: 1rem 0.8rem;
+  overflow-y: auto;
+}
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 10px;
+  color: rgba(255,255,255,0.68);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 0.15rem;
+  transition: all var(--transition);
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+.admin-nav-link svg { flex-shrink: 0; opacity: 0.85; }
+.admin-nav-link:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.admin-nav-link.active {
+  background: linear-gradient(135deg, rgba(191,91,38,0.22), rgba(184,145,47,0.14));
+  color: var(--color-gold);
+}
+.admin-nav-link.active svg { opacity: 1; }
+.admin-sidebar-footer {
+  padding: 1rem 1.3rem 1.3rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.admin-sidebar-back {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+.admin-sidebar-back:hover { color: #fff; }
+
+/* ---------- Topbar ---------- */
+.admin-main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.admin-topbar {
+  background: #fff;
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.admin-topbar h1 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: 0;
+}
+.admin-topbar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.admin-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #BF5B26, var(--color-gold));
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+}
+.admin-topbar-user .name { font-size: 0.86rem; font-weight: 700; color: var(--color-ink); line-height: 1.2; }
+.admin-topbar-user .role { font-size: 0.72rem; color: var(--color-text-muted); }
+
+.admin-content {
+  padding: 1.8rem;
+  flex: 1;
+}
+
+/* ---------- Stat cards ---------- */
+.admin-stat-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.3rem 1.4rem;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  height: 100%;
+}
+.admin-stat-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.admin-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.15;
+}
+.admin-stat-label { font-size: 0.78rem; color: var(--color-text-muted); }
+
+/* ---------- Card / table wrapper ---------- */
+.admin-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+.admin-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding: 1.1rem 1.3rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.admin-card-header h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.admin-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 1rem 1.3rem;
+  border-bottom: 1px solid var(--color-border);
+  background: #FAF8F4;
+}
+.admin-filter-row input,
+.admin-filter-row select {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.85rem;
+  background: #fff;
+}
+
+.admin-table-scroll { overflow-x: auto; }
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+.admin-table thead th {
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  padding: 0.7rem 1rem;
+  background: #FAF8F4;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+.admin-table tbody td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+  color: var(--color-text);
+}
+.admin-table tbody tr:last-child td { border-bottom: none; }
+.admin-table tbody tr:hover { background: #FCFAF6; }
+.admin-table .muted-sub { font-size: 0.76rem; color: var(--color-text-muted); }
+
+/* ---------- Status badges ---------- */
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+.admin-badge::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.admin-badge.tone-amber { background: #FBF1DC; color: #97701E; }
+.admin-badge.tone-blue { background: #E4EEF7; color: #2A5F8A; }
+.admin-badge.tone-green { background: #E4F1E8; color: #2F6B4F; }
+.admin-badge.tone-red { background: #FBE7E4; color: #A5321E; }
+.admin-badge.tone-gray { background: #EEECE6; color: #6E6E6E; }
+
+/* ---------- Action icon buttons ---------- */
+.admin-action-btn {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  color: var(--color-text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.admin-action-btn:hover { border-color: var(--color-gold); color: #97701E; background: #FBF1DC; }
+.admin-action-btn.danger:hover { border-color: #C0392B; color: #A5321E; background: #FBE7E4; }
+
+.admin-status-select {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.8rem;
+  background: #fff;
+  min-width: 120px;
+}
+
+.admin-empty {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 2.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- Modal (menu item add/edit) ---------- */
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17,14,10,0.5);
+  z-index: 2100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.admin-modal-overlay.open { opacity: 1; visibility: visible; }
+.admin-modal {
+  background: #fff;
+  border-radius: var(--radius);
+  width: min(480px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.6rem;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+}
+.admin-modal h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.1rem; color: var(--color-ink); }
+.admin-modal .form-label { font-size: 0.82rem; font-weight: 600; }
+
+@media (max-width: 900px) {
+  .admin-shell { flex-direction: column; }
+  .admin-sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+  }
+  .admin-sidebar-brand { border-bottom: none; border-right: 1px solid rgba(255,255,255,0.08); padding: 0.9rem 1rem; }
+  .admin-sidebar-nav { display: flex; overflow-x: auto; padding: 0.6rem; }
+  .admin-nav-link { white-space: nowrap; margin-bottom: 0; margin-right: 0.3rem; }
+  .admin-sidebar-footer { display: none; }
+  .admin-content { padding: 1.1rem; }
+}
