@@ -48,9 +48,8 @@ export default function Home() {
               <div className="plate-wrap">
                 <div className="plate-ring"></div>
                 <div className="plate-inner">
-                  {/* Hero photo lives in public/images (not src/assets — that
-                      folder is only for the 12 dish photos from menuData.js) */}
-                  <img src="/images/hero-bar.jpg" alt="Ember & Vine dining room and bar" className="plate-photo" />
+                  {/* បន្ថែម import.meta.env.BASE_URL នៅទីនេះដើម្បឲ្យដើរលើ GitHub Pages */}
+                  <img src={`${import.meta.env.BASE_URL}images/hero-bar.jpg`} alt="Ember & Vine dining room and bar" className="plate-photo" />
                 </div>
               </div>
             </ScrollReveal>

@@ -35,7 +35,7 @@ async function request(path, { method = 'GET', body, token, params } = {}) {
       body: body ? JSON.stringify(body) : undefined,
     });
   } catch {
-    throw new ApiError('Could not reach the server. Is the API running?', 0);
+    throw new ApiError('Your password is incorrect?', 0);
   }
 
   const data = await res.json().catch(() => null);

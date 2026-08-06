@@ -2,7 +2,11 @@ export default function AuthLayout({ children }) {
   return (
     <div className="auth-screen">
       <div className="auth-visual">
-        <img src="/images/hero-bar.jpg" alt="Ember & Vine dining room" className="auth-visual-img" />
+        <img 
+          src={`${import.meta.env.BASE_URL}images/hero-bar.jpg`} 
+          alt="Ember & Vine dining room" 
+          className="auth-visual-img" 
+        />
         <div className="auth-visual-overlay"></div>
         <div className="auth-visual-content">
           <div className="auth-brand">
